@@ -1,4 +1,4 @@
-export const taskOneStyle =
+export const taskTwoStyle =
 {
     spacing: {
         padding : '5px'

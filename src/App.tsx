@@ -1,11 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Link,   BrowserRouter as Router, useRoutes } from 'react-router-dom';
-import TaskOne from './task1';
-import TaskTwo from './task2';
-import { routesPath } from './Route';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import { Link,   BrowserRouter as Router, useRoutes } from 'react-router-dom'
+import TaskOne from './task1'
+import TaskTwo from './task2'
+import { routesPath } from './Route'
 
 function AppRoutes() {
   const routes = useRoutes([
