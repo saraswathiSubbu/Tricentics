@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { taskOneStyle } from "../task1/style"
 import { apiStore } from "./store"
 import { taskTwoStyle } from "./style"
 
@@ -13,10 +12,6 @@ export default function TaskTwo() {
     }
 
     useEffect(() => {
-        fetch()
-    }, [])
-
-    useEffect(() => {
         let i = 1
         setInterval(() => {
             if (i === 6)
@@ -27,13 +22,17 @@ export default function TaskTwo() {
     }, [])
 
     useEffect(() => {
+        fetch()
+    }, [])
+
+    useEffect(() => {
         if (searchField !== '' && checkDataPresent(searchField))
             setMusic(musicArray)
 
     }, [musicArray, searchField])
 
     function removeDuplicates(arr: Array<any>) {
-        const mapped = arr.map((obj, index) => obj.collectionName)
+        const mapped = arr.map((obj) => obj.collectionName)
         return mapped.filter((type, index) => mapped.indexOf(type) === index)
     }
 
@@ -41,18 +40,23 @@ export default function TaskTwo() {
 
         const sortedArray = musicArray.sort((a: any, b: any) => a.collectionName.localeCompare(b.collectionName))
         let removeDuplicate = removeDuplicates(sortedArray)
+        let finalArray = removeDuplicate.splice(0, 5)
+        let counter = 4
 
-        console.log('sortedArray', removeDuplicate)
-        let counter = 5
-
-        removeDuplicate.forEach((element: any, index: number) => {
-
-            if (index <= 5) {
-                alphabet[counter--] = element
-                setAlphabet(alphabet)
+        finalArray.forEach((element: any) => {
+            if (counter != 4) {
+                alphabet.shift()
+                alphabet[4] = element
+                setAlphabet([...alphabet])
+                counter--
             }
-            console.log(alphabet)
+            else {
+                alphabet[4] = element
+                setAlphabet([...alphabet])
+                counter--
+            }
         })
+
     }
 
     const checkDataPresent = (searchField: any) => {

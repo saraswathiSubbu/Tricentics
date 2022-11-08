@@ -10,8 +10,8 @@ export default function TaskOne() {
     }
 
     useEffect(() => {
-        let i = 1;
-        const interval = setInterval(() => {
+        let i = 1
+        setInterval(() => {
             if (i === 6)
                 i = 1
 

@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+## Given Task
+Task 1
+1. Have an intial array with A,B,C,D,E it will rotate the value for each one seond and user can also search the filed 
+Task 2
+2. Intaillay it hava an array with A,B,C,D,E and rotate for each second when user types the field with Radiohead: The Alan Cross Guide (Unabridged) it displays the first five elements by replacing the A,B,C,D,E.
+## Problems 
+Task 2
+when the album response is loaded the array is not getting updated immediately , but it updates after hiding the set interval.
+
